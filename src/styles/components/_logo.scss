@@ -1,0 +1,21 @@
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__title {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    color: $main-design-color;
+    text-transform: uppercase;
+
+    &--bolder {
+      text-shadow: currentColor 0px 0px 1px,
+      currentColor 0px 0px 1px,
+      currentColor 0px 0px 1px,
+      currentColor 0px 0px 1px,
+      currentColor 0px 0px 1px,
+      currentColor 0px 0px 1px;
+    }
+  }
+}

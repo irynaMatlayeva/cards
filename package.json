@@ -1,0 +1,44 @@
+{
+  "name": "cards",
+  "version": "1.0.0",
+  "description": "cards-project",
+  "main": "script.js",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irynaMatlayeva/cards.git"
+  },
+  "author": "Iryna Matlayeva",
+  "license": "ISC",
+  "homepage": "https://github.com/irynaMatlayeva/cards#readme",
+  "contributors": [
+    {
+      "name": "Iryna Matlayeva",
+      "email": "i.matlayeva@gmail.com",
+      "url": "https://github.com/irynaMatlayeva"
+    }
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "browser-sync": "^2.26.13",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-js-minify": "0.0.3",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-pngquant": "^9.0.1",
+    "prettier": "2.2.1"
+  }
+}

@@ -1,0 +1,11 @@
+%cards-border {
+  border: 1px solid $main-design-color;
+  border-radius: 10px;
+  color: $main-text-color;
+  transition: box-shadow 0.3s;
+}
+
+%cards-border-hover {
+  border: 1px solid $main-design-color;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

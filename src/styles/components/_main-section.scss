@@ -1,0 +1,49 @@
+.cards-visit {
+  &__content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 40rem;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid $main-design-color;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  }
+
+  &__welcome-text {
+    width: 50%;
+    align-self: center;
+    text-align: center;
+    font-size: 50px;
+    color: $main-text-color;
+    text-transform: uppercase;
+  }
+
+  &__default-text {
+    margin: 0 auto;
+    align-self: center;
+    font-size: 30px;
+    color: $main-text-color;
+    text-transform: capitalize;
+  }
+
+  &__img {
+    width: 50%;
+    align-self: center;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 767px) {
+  .cards-visit__content {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .cards-visit__img,
+  .cards-visit__welcome-text {
+    width: 100%;
+  }
+}

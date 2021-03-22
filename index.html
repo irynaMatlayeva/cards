@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="./dist/images/logo.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/styles/style.min.css">
+    <title>HealthCare</title>
+</head>
+<body>
+
+<header class="cards-header cards__header">
+    <div class="wrapper">
+        <div class="cards-header__content">
+            <a class="logo" href="#void">
+                <img src="./dist/images/logo.svg" alt="Logo" width = "70" height = "70">
+                <span class="logo__title"><span class="logo__title--bolder">Health</span>Care</span>
+            </a>
+            <a href="#void" id="isLoginButton" class="header__btn btn">Sign in</a>
+            <a href="#void" id="isCreateVisitButton" class="header__btn btn hide">Create visit</a>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="cards-visit cards__visit">
+        <div class="wrapper">
+            <div class="cards-visit__content cards-visit__content--welcome">
+                <span class="cards-visit__welcome-text">Welcome to our medical cards app</span>
+                <img class="cards-visit__img" src="./dist/images/main.jpg" alt="Welcome to our medical cards app">
+            </div>
+
+            <div class="cards-visit__content cards-visit__content--card-list hide">
+                <p class="cards-visit__default-text">No items have been added</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script type="module" src="./dist/scripts/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+@import "base/base";
+@import "components/components";
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  min-width: 320px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
