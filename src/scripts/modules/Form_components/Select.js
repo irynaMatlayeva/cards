@@ -33,5 +33,3 @@ export class Select{
     }
 }
 
-// const some = new Select();
-// console.log(some);
