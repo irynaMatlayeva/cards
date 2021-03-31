@@ -1,17 +1,14 @@
-import{config, createElements} from '../config.js'
+import { config, createElements } from "../config.js";
 
-export class Form{
+export class Form {
+  constructor() {
+    this.form = createElements({ elem: "form", classes: ["form"] });
+  }
 
-constructor(){
-this.form = createElements({elem:"form",classes:["form"]});
+  insert(...elements) {
+    return this.form.append(...elements);
+  }
+  create() {
+    return this.form;
+  }
 }
-
-insert(...elements){
-   return this.form.append(...elements);
-}
-create(){
-return this.form;
-}
-}
-// const some = new Form();
-// console.log(some);
