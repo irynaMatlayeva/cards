@@ -1,10 +1,10 @@
 import {createElements} from '../config.js';
-import {headerContent} from "./headerComponent.js";
+import {headerContent} from './headerComponent.js';
 
 class ViewMainContent {
-    constructor({onChange: handleChange}) {
-        this.handleChange = handleChange;
-        this.wrapper = createElements({elem: 'div', classes: ['wrapper'], content: [this.changeContent()]});
+    constructor() {
+        this.content = this.changeContent();
+        this.wrapper = createElements({elem: 'div', classes: ['wrapper'], content: [this.content]});
         this.section = createElements({elem: 'section', classes: ['cards-visit', 'cards__visit'], content: [this.wrapper]});
         this.main = createElements({elem: 'main', content: [this.section]});
         document.body.append(this.main);
@@ -15,11 +15,18 @@ class ViewMainContent {
     }
 
     changeContent() {
-        const content = this.contentWelcome();
-        if (this.handleChange) {
-            this.contentVisit();
+        let content;
+        const isCreateVisitButton = document.getElementById('isCreateVisitButton');
+        console.log(isCreateVisitButton)
+
+        if (!isCreateVisitButton.classList.contains('hide')) {
+            console.log(isCreateVisitButton)
+
+            content = this.contentVisit();
+            console.log('visit',content)
         } else {
-            this.contentWelcome();
+            content = this.contentWelcome();
+            console.log('welcome',content)
         }
 
         return content;
@@ -28,15 +35,15 @@ class ViewMainContent {
 
     contentVisit() {
         const paragraph = createElements({elem: 'p', classes: ['cards-visit__default-text'], content: ['No items have been added']});
-        const visitWrapper = createElements({elem: 'div', classes: ['cards-visit__content', 'cards-visit__content--card-list'], content: [paragraph]});
+        const content = createElements({elem: 'div', classes: ['cards-visit__content', 'cards-visit__content--card-list'], content: [paragraph]});
 
-        return visitWrapper;
+        return content;
     }
 
     contentWelcome() {
         const contentImg = createElements({elem: 'img', classes: ['cards-visit__img']});
         const contentSpan = createElements({elem: 'span', classes: ['cards-visit__welcome-text'], content: ['Welcome to our medical cards app']});
-        const welcomeWrapper = createElements({
+        const content = createElements({
             elem: 'div',
             classes: ['cards-visit__content', 'cards-visit__content--welcome'],
             content: [contentSpan, contentImg]
@@ -44,9 +51,10 @@ class ViewMainContent {
         contentImg.src = '../dist/images/main.jpg';
         contentImg.alt = 'Welcome to our medical cards app';
 
-        return welcomeWrapper;
+        return content;
     }
 }
 
-export const mainContent = new ViewMainContent(headerContent.toggleActive.bind(headerContent.event));
-mainContent.render()
+export const mainContent = new ViewMainContent();
+// console.log(mainContent.contentVisit())
+mainContent.render();

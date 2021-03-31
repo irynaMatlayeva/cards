@@ -1,4 +1,5 @@
-import {config, createElements} from "../config.js";
+import {config, createElements} from '../config.js';
+import {mainContent} from './mainComponent.js';
 
 class ViewHeader {
     constructor() {
@@ -29,19 +30,21 @@ class ViewHeader {
 
     event() {
         this.loginBtn.addEventListener('click', () => {
+
             this.toggleActive();
         })
     }
 
     toggleActive() {
         if (this.visitBtn.classList.contains('hide')) {
-            this.visitBtn.classList.remove('hide')
-            this.loginBtn.classList.add('hide')
+            this.visitBtn.classList.toggle('hide');
+            this.loginBtn.classList.toggle('hide');
         }
     }
 
 }
 
 export const headerContent = new ViewHeader();
-// headerContent.toggleActive();
 headerContent.render();
+const mainContentRender = mainContent.changeContent()
+console.log(mainContentRender)
