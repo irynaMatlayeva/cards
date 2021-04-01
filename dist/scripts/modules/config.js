@@ -13,15 +13,9 @@ export const config = {
 
 export function createElements({elem, id, classes, content}) {
     const element = document.createElement(elem)
-    if (id) {
-        element.id = id
-    }
-    if (classes) {
-        element.classList.add(...classes)
-    }
-    if (content) {
-        element.append(...content)
-    }
+    if (id) element.id = id;
+    if (classes) element.classList.add(...classes);
+    if (content) element.append(...content);
 
-    return element
+    return element;
 }

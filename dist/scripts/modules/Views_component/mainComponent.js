@@ -3,32 +3,34 @@ import {headerContent} from './headerComponent.js';
 
 class ViewMainContent {
     constructor() {
-        this.content = this.changeContent();
-        this.wrapper = createElements({elem: 'div', classes: ['wrapper'], content: [this.content]});
-        this.section = createElements({elem: 'section', classes: ['cards-visit', 'cards__visit'], content: [this.wrapper]});
-        this.main = createElements({elem: 'main', content: [this.section]});
-        document.body.append(this.main);
     }
 
     render() {
-        return this.main;
+        const content = this.contentWelcome();
+        this.createRootElements(content);
+    }
+
+    createRootElements(elem) {
+        const wrapper = createElements({elem: 'div', classes: ['wrapper'], content: [elem]});
+        const section = createElements({elem: 'section', classes: ['cards-visit', 'cards__visit'], content: [wrapper]});
+        const main = createElements({elem: 'main', content: [section]});
+        document.body.append(main);
     }
 
     changeContent() {
+        const main = document.querySelector('main');
+        main.remove();
+
         let content;
-        const isCreateVisitButton = document.getElementById('isCreateVisitButton');
-        console.log(isCreateVisitButton)
+        const isCreateVisitButton = document.querySelector('#isCreateVisitButton');
 
         if (!isCreateVisitButton.classList.contains('hide')) {
-            console.log(isCreateVisitButton)
-
             content = this.contentVisit();
-            console.log('visit',content)
         } else {
             content = this.contentWelcome();
-            console.log('welcome',content)
         }
 
+        this.createRootElements(content);
         return content;
     }
 
@@ -55,6 +57,6 @@ class ViewMainContent {
     }
 }
 
+
 export const mainContent = new ViewMainContent();
-// console.log(mainContent.contentVisit())
 mainContent.render();

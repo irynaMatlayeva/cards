@@ -29,10 +29,10 @@ export class TextArea {
     label.setAttribute("for", this.textarea.id);
     this.textarea.parentElement.insertBefore(label, this.textarea);
   }
-  get value() {
-    return this.textarea.value;
-  }
-  set value(value) {
-    return (this.textarea.value = value);
-  }
+  //   get value() {
+  //     return this.textarea.value;
+  //   }
+  //   set value(value) {
+  //     return (this.textarea.value = value);
+  //   }
 }
