@@ -37,7 +37,6 @@ class ViewHeader {
         if (this.visitBtn.classList.contains("hide")) {
             this.visitBtn.classList.remove("hide");
             this.loginBtn.classList.add("hide");
-            // const mainContent = new ViewMainContent();
             mainContent.changeContent();
         }
     }
