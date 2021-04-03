@@ -1,12 +1,12 @@
-import {createElements} from "../config.js";
+import Component from "../config.js";
 
-export class Modal {
+class Modal extends Component {
     constructor() {
-        this.modalClose = createElements({elem: "span", classes: ["modal--close"]});
-        this.modalContent = createElements({elem: "div", classes: ["modal__content"], content: [this.modalClose]});
-        this.modalBody = createElements({elem: "div", classes: ["modal__container"], content: [this.modalContent]});
-        this.modal = createElements({elem: "div", classes: ["modal"], content: [this.modalBody]});
-
+        super();
+        this.modalClose = this.createElement({elem: "span", classes: ["modal--close"]});
+        this.modalContent = this.createElement({elem: "div", classes: ["modal__content"], content: [this.modalClose]});
+        this.modalBody = this.createElement({elem: "div", classes: ["modal__container"], content: [this.modalContent]});
+        this.modal = this.createElement({elem: "div", classes: ["modal"], content: [this.modalBody]});
     }
 
     insert(...elements) {
@@ -32,8 +32,7 @@ export class Modal {
     }
 
     title(titleText = '', titleClass = '') {
-        let title = createElements({elem: "h5", classes: ["modal__title", titleClass]});
-        title.textContent = titleText;
+        let title = this.createElement({elem: "h5", classes: ["modal__title", titleClass], text: titleText});
         this.modalContent.prepend(title);
     }
 
@@ -43,8 +42,6 @@ export class Modal {
             this.modal.remove();
         }
     }
-
-    remove() {
-        this.modal.remove();
-    }
 }
+
+export const modal = new Modal();

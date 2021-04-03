@@ -10,12 +10,19 @@ export const config = {
     LOGIN_URL
 }
 
+class Component {
+    constructor() {
+    }
 
-export function createElements({elem, id, classes, content}) {
-    const element = document.createElement(elem)
-    if (id) element.id = id;
-    if (classes) element.classList.add(...classes);
-    if (content) element.append(...content);
+    createElement({elem, id, classes, text, content}) {
+        const element = document.createElement(elem)
+        if (id) element.id = id;
+        if (classes) element.classList.add(...classes);
+        if (text) element.textContent = text;
+        if (content) element.append(...content);
 
-    return element;
+        return element
+    }
 }
+
+export default Component;

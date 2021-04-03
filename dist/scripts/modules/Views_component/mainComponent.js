@@ -1,8 +1,9 @@
-import {createElements} from '../config.js';
+import Component from '../config.js';
 import {headerContent} from './headerComponent.js';
 
-class ViewMainContent {
+class ViewMainContent extends Component {
     constructor() {
+        super();
     }
 
     render() {
@@ -11,9 +12,9 @@ class ViewMainContent {
     }
 
     createRootElements(elem) {
-        const wrapper = createElements({elem: 'div', classes: ['wrapper'], content: [elem]});
-        const section = createElements({elem: 'section', classes: ['cards-visit', 'cards__visit'], content: [wrapper]});
-        const main = createElements({elem: 'main', content: [section]});
+        const wrapper = this.createElement({elem: 'div', classes: ['wrapper'], content: [elem]});
+        const section = this.createElement({elem: 'section', classes: ['cards-visit', 'cards__visit'], content: [wrapper]});
+        const main = this.createElement({elem: 'main', content: [section]});
         document.body.append(main);
     }
 
@@ -36,16 +37,16 @@ class ViewMainContent {
 
 
     contentVisit() {
-        const paragraph = createElements({elem: 'p', classes: ['cards-visit__default-text'], content: ['No items have been added']});
-        const content = createElements({elem: 'div', classes: ['cards-visit__content', 'cards-visit__content--card-list'], content: [paragraph]});
+        const paragraph = this.createElement({elem: 'p', classes: ['cards-visit__default-text'], content: ['No items have been added']});
+        const content = this.createElement({elem: 'div', classes: ['cards-visit__content', 'cards-visit__content--card-list'], content: [paragraph]});
 
         return content;
     }
 
     contentWelcome() {
-        const contentImg = createElements({elem: 'img', classes: ['cards-visit__img']});
-        const contentSpan = createElements({elem: 'span', classes: ['cards-visit__welcome-text'], content: ['Welcome to our medical cards app']});
-        const content = createElements({
+        const contentImg = this.createElement({elem: 'img', classes: ['cards-visit__img']});
+        const contentSpan = this.createElement({elem: 'span', classes: ['cards-visit__welcome-text'], content: ['Welcome to our medical cards app']});
+        const content = this.createElement({
             elem: 'div',
             classes: ['cards-visit__content', 'cards-visit__content--welcome'],
             content: [contentSpan, contentImg]
