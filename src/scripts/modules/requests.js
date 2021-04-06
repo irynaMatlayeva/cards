@@ -7,7 +7,7 @@ import {dictionary} from "./dictionary.js";
 const tokenKey = "token";
 
 //universal function for requests
-const makeRequest = (url, method = 'GET', config) => {
+const makeRequest = (url, method = 'GET', config, errorMessage = 'Error') => {
     return fetch(url, {
         method,
         ...config
@@ -15,19 +15,22 @@ const makeRequest = (url, method = 'GET', config) => {
         .then(response => {
             if (response.ok) {
                 return response.text();
+            } else {
+                throw new Error(errorMessage);
             }
-        }).catch(error => console.log(error.message));
+        })
 }
 
 //universal functions for fetch methods
-const getPost = (url, requestBody) => makeRequest(url, 'POST', {
+const getPost = (url, requestBody, errorMessage) => makeRequest(url, 'POST', {
     body: requestBody,
     mode: 'cors',
     headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem(tokenKey)}`
     }
-})
+}, errorMessage)
+
 const getDataCards = url => makeRequest(url, 'GET', {
     headers: {
         'Content-Type': 'application/json',
@@ -52,10 +55,10 @@ const deleteCards = url => makeRequest(url, 'DELETE', {
 
 //requests
 export async function loginRequest(data, element) {
-    const dataRes = await getPost(config.LOGIN_URL, JSON.stringify(data));
+    const dataRes = await getPost(config.LOGIN_URL, JSON.stringify(data), 'Error! Invalid email or password.');
     localStorage.setItem(tokenKey, dataRes);
     element.close();
-    headerContent.changeContent();
+    changeContent();
     await readCardsData();
 }
 
