@@ -58,7 +58,7 @@ export async function loginRequest(data, element) {
     const dataRes = await getPost(config.LOGIN_URL, JSON.stringify(data), 'Error! Invalid email or password.');
     localStorage.setItem(tokenKey, dataRes);
     element.close();
-    changeContent();
+    headerContent.changeContent();
     await readCardsData();
 }
 
