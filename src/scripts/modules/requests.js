@@ -4,7 +4,7 @@ import {createCards} from "./Visits_components/Cards.js";
 import {createFilter} from "./Modal_components/Filter.js";
 import {dictionary} from "./dictionary.js";
 
-const tokenKey = "token"
+const tokenKey = "token";
 
 //universal function for requests
 const makeRequest = (url, method = 'GET', config) => {
