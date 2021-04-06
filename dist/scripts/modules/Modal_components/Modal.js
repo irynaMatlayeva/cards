@@ -3,25 +3,10 @@ import Component from "../config.js";
 export class Modal extends Component {
   constructor() {
     super();
-    this.modalClose = this.createElement({
-      elem: "span",
-      classes: ["modal--close"],
-    });
-    this.modalContent = this.createElement({
-      elem: "div",
-      classes: ["modal__content"],
-      content: [this.modalClose],
-    });
-    this.modalBody = this.createElement({
-      elem: "div",
-      classes: ["modal__container"],
-      content: [this.modalContent],
-    });
-    this.modal = this.createElement({
-      elem: "div",
-      classes: ["modal"],
-      content: [this.modalBody],
-    });
+    this.modalClose = this.createElement({elem: "span", classes: ["modal--close"]});
+    this.modalContent = this.createElement({elem: "div", classes: ["modal__content"], content: [this.modalClose],});
+    this.modalBody = this.createElement({elem: "div", classes: ["modal__container"], content: [this.modalContent]});
+    this.modal = this.createElement({elem: "div", classes: ["modal"], content: [this.modalBody]});
   }
 
   insert(...elements) {
@@ -45,13 +30,9 @@ export class Modal extends Component {
     return this.modal;
   }
 
-  title(titleText = "", titleClass = "") {
-    let title = this.createElement({
-      elem: "h5",
-      classes: ["modal__title", titleClass],
-      text: titleText,
-    });
-    if (titleClass) title.classList.add(titleClass);
+  title(titleText = "") {
+    let title = this.createElement({elem: "h5", classes: ["modal__title"], text: titleText});
+    title.textContent = titleText;
     this.modalContent.prepend(title);
   }
 

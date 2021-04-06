@@ -1,6 +1,6 @@
 import {config} from "./config.js";
 import {headerContent} from "./Views_component/headerComponent.js";
-import {createCards} from "./Visits_components/Cards.js";
+import {cards} from "./Views_component/Cards.js";
 import {createFilter} from "./Modal_components/Filter.js";
 import {dictionary} from "./dictionary.js";
 
@@ -66,7 +66,7 @@ export async function createCardData(data) {
     const dataRes = await getPost(config.CARDS_URL, JSON.stringify(data));
     const dataJson = JSON.parse(dataRes);
     const {content, id} = dataJson;
-    createCards(content, id);
+    cards.createCards(content, id);
 }
 
 
@@ -75,7 +75,7 @@ export async function readCardsData() {
     let data = JSON.parse(dataRes);
     if (data.length > 0) {
         data.map(item => {
-            createCards(item.content, item.id);
+            cards.createCards(item.content, item.id);
         })
         createFilter();
     }
@@ -104,7 +104,7 @@ export async function readCardsDataWithFilter(searchTarget, searchStatus, search
             target.toLowerCase().match(new RegExp(searchTarget.toLowerCase()))
         )
     }).forEach(item => {
-        createCards(item.content, item.id);
+        cards.createCards(item.content, item.id);
     })
 }
 
@@ -113,7 +113,7 @@ export async function updateCardData(data, id) {
     let dataCards = JSON.parse(dataRes);
     const oldCard = document.getElementById(id);
     oldCard.remove();
-    createCards(dataCards.content, dataCards.id);
+    cards.createCards(dataCards.content, dataCards.id);
 }
 
 export async function deleteCardsData(id) {

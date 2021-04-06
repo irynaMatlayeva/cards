@@ -1,6 +1,6 @@
 import { Input } from "../Form_components/Input.js";
 import { dictionary } from "../dictionary.js";
-import { Visit } from "./Visits.js";
+import {Visit} from "./Visits.js";
 
 export class VisitCardiologist extends Visit {
   constructor() {
