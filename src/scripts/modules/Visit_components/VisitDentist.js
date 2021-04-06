@@ -17,15 +17,12 @@ export class VisitDentist extends Visit {
       this.deteOfLastVisit.create(),
       this.submit.create()
     );
-    this.fullName.label(dictionary.fullNameLabel, dictionary.dentistCardLabel);
-    this.reason.label(dictionary.reasonText, dictionary.dentistCardLabel);
-    this.desc.label(dictionary.shortDescLabel, dictionary.dentistCardLabel);
-    this.urgency.label(dictionary.urgencyLabel, dictionary.dentistCardLabel);
-    this.deteOfLastVisit.label(
-      dictionary.dateOfLastVisitLabel,
-      dictionary.dentistCardLabel
-    );
-    this.status.label(dictionary.statusLabel, dictionary.dentistCardLabel);
+    this.fullName.label(dictionary.fullNameLabel);
+    this.reason.label(dictionary.reasonText);
+    this.desc.label(dictionary.shortDescLabel);
+    this.urgency.label(dictionary.urgencyLabel);
+    this.deteOfLastVisit.label(dictionary.dateOfLastVisitLabel);
+    this.status.label(dictionary.statusLabel);
 
     return this.modal;
   }

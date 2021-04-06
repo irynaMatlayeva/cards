@@ -26,13 +26,47 @@ export class VisitTherapist extends Visit {
       this.age.create(),
       this.submit.create()
     );
-    this.fullName.label(dictionary.fullNameLabel, dictionary.fullNameLabel);
-    this.reason.label(dictionary.reasonText, dictionary.therapistCardLabel);
-    this.desc.label(dictionary.shortDescLabel, dictionary.therapistCardLabel);
-    this.urgency.label(dictionary.urgencyLabel, dictionary.therapistCardLabel);
-    this.status.label(dictionary.statusLabel, dictionary.therapistCardLabel);
-    this.age.label(dictionary.ageLabel, dictionary.therapistCardLabel);
+    this.fullName.label(dictionary.fullNameLabel);
+    this.reason.label(dictionary.reasonText);
+    this.desc.label(dictionary.shortDescLabel);
+    this.urgency.label(dictionary.urgencyLabel);
+    this.status.label(dictionary.statusLabel);
+    this.age.label(dictionary.ageLabel);
 
     return this.modal;
+  }
+  event(event = "", fn) {
+    this.submit.event(event, fn);
+  }
+  close() {
+    this.modal.close();
+  }
+  setValues(
+    fullName = null,
+    reason = null,
+    desc = null,
+    urgency = null,
+    age = null,
+    status = null,
+    submit = "Save changes"
+  ) {
+    this.fullName.value = fullName;
+    this.reason.value = reason;
+    this.desc.value = desc;
+    this.urgency.value = urgency;
+    this.age.value = age;
+    this.status.value = status;
+    this.submit.value = submit;
+  }
+  get value() {
+    return {
+      [dictionary.descGetValue]: dictionary.therapistValue,
+      [dictionary.fullNameGetValue]: this.fullName.value,
+      [dictionary.reasonGetValue]: this.reason.value,
+      [dictionary.descGetValue]: this.desc.value,
+      [dictionary.urgencyGetValue]: this.urgency.value,
+      [dictionary.ageGetValue]: this.age.value,
+      [dictionary.statusGetValue]: this.status.value,
+    };
   }
 }
