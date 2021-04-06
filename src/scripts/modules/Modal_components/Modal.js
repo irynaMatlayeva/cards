@@ -51,6 +51,7 @@ export class Modal extends Component {
       classes: ["modal__title", titleClass],
       text: titleText,
     });
+    if (titleClass) title.classList.add(titleClass);
     this.modalContent.prepend(title);
   }
 
