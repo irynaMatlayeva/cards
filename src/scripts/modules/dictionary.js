@@ -16,13 +16,14 @@ const agePlaceholder = "Enter Your age";
 const pressureLabel = "Normal patient pressure";
 const statusLabel = "Choose status";
 const pressurePlaceholder = "Enter Your pressure";
-const weightIndexLabel = "Patient\'s body mass index";
+const weightIndexLabel = "Patient's body mass index";
 const weightIndexPlaceholder = "Enter Your weight index";
 const heartIllnessLabel = "Past heart disease";
-const heartIllnessPlaceholder = "Enter Your previous diseases of the cardiovascular system";
-const cardioCardLabel = "card-label__cardiologist";
-const therapistCardLabel = "card-label__therapist";
-const dentistCardLabel = "card-label__dentist";
+const heartIllnessPlaceholder =
+  "Enter Your previous diseases of the cardiovascular system";
+// const cardioCardLabel = "card-label__cardiologist";
+// const therapistCardLabel = "card-label__therapist";
+// const dentistCardLabel = "card-label__dentist";
 const dateOfLastVisitLabel = "Date of last visit";
 const doctorGetValue = "Doctor";
 const reasonGetValue = "Target";
@@ -41,49 +42,52 @@ const priorityLow = "Low";
 const statusAll = "All";
 const statusOpen = "Open";
 const statusDone = "Done";
+const errMessage = "errMessage";
+cons;
 
 export const dictionary = {
-    therapistValue,
-    dentistValue,
-    cardiologistValue,
-    reasonText,
-    reason,
-    fullName,
-    age,
-    pressure,
-    weightIndex,
-    heartIllness,
-    shortDescLabel,
-    urgencyLabel,
-    fullNameLabel,
-    ageLabel,
-    pressureLabel,
-    weightIndexLabel,
-    heartIllnessLabel,
-    cardioCardLabel,
-    pressurePlaceholder,
-    weightIndexPlaceholder,
-    heartIllnessPlaceholder,
-    agePlaceholder,
-    therapistCardLabel,
-    dentistCardLabel,
-    dateOfLastVisitLabel,
-    doctorGetValue,
-    reasonGetValue,
-    descGetValue,
-    fullNameGetValue,
-    urgencyGetValue,
-    pressureGetValue,
-    weightIndexGetValue,
-    heartIllnessGetValue,
-    ageGetValue,
-    statusLabel,
-    statusGetValue,
-    priorityAll,
-    priorityHigh,
-    priorityNormal,
-    priorityLow,
-    statusAll,
-    statusOpen,
-    statusDone
-}
+  therapistValue,
+  dentistValue,
+  cardiologistValue,
+  reasonText,
+  reason,
+  fullName,
+  age,
+  pressure,
+  weightIndex,
+  heartIllness,
+  shortDescLabel,
+  urgencyLabel,
+  fullNameLabel,
+  ageLabel,
+  pressureLabel,
+  weightIndexLabel,
+  heartIllnessLabel,
+  // cardioCardLabel,
+  pressurePlaceholder,
+  weightIndexPlaceholder,
+  heartIllnessPlaceholder,
+  agePlaceholder,
+  // therapistCardLabel,
+  // dentistCardLabel,
+  dateOfLastVisitLabel,
+  doctorGetValue,
+  reasonGetValue,
+  descGetValue,
+  fullNameGetValue,
+  urgencyGetValue,
+  pressureGetValue,
+  weightIndexGetValue,
+  heartIllnessGetValue,
+  ageGetValue,
+  statusLabel,
+  statusGetValue,
+  priorityAll,
+  priorityHigh,
+  priorityNormal,
+  priorityLow,
+  statusAll,
+  statusOpen,
+  statusDone,
+  errMessage,
+};

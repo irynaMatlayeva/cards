@@ -54,21 +54,15 @@ export class VisitCardiologist extends Visit {
       this.age.create(),
       this.submit.create()
     );
-    this.fullName.label(dictionary.fullNameLabel, dictionary.cardioCardLabel);
-    this.reason.label(dictionary.reasonText, dictionary.cardioCardLabel);
-    this.desc.label(dictionary.shortDescLabel, dictionary.cardioCardLabel);
-    this.urgency.label(dictionary.urgencyLabel, dictionary.cardioCardLabel);
-    this.status.label(dictionary.statusLabel, dictionary.cardioCardLabel);
-    this.pressure.label(dictionary.pressureLabel, dictionary.cardioCardLabel);
-    this.weightIndex.label(
-      dictionary.weightIndexLabel,
-      dictionary.cardioCardLabel
-    );
-    this.heartIllness.label(
-      dictionary.heartIllnessLabel,
-      dictionary.cardioCardLabel
-    );
-    this.age.label(dictionary.ageLabel, dictionary.cardioCardLabel);
+    this.fullName.label(dictionary.fullNameLabel);
+    this.reason.label(dictionary.reasonText);
+    this.desc.label(dictionary.shortDescLabel);
+    this.urgency.label(dictionary.urgencyLabel);
+    this.status.label(dictionary.statusLabel);
+    this.pressure.label(dictionary.pressureLabel);
+    this.weightIndex.label(dictionary.weightIndexLabel);
+    this.heartIllness.label(dictionary.heartIllnessLabel);
+    this.age.label(dictionary.ageLabel);
 
     return this.modal;
   }
