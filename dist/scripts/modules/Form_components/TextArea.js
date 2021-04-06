@@ -17,17 +17,18 @@ export class TextArea extends Component {
         if (required) this.textarea.setAttribute("required", required);
     }
 
-    label(text = null, classes = null) {
-        const label = this.createElement({elem: "label", classes: ["label"], text: text});
+    label(text = null, labelClass = null) {
+        const label = this.createElement({elem: "label", classes: ["input__label"], text: text});
+        if (labelClass) label.classList.add(labelClass);
         label.setAttribute("for", this.textarea.id);
         this.textarea.parentElement.insertBefore(label, this.textarea);
     }
 
     get value() {
-        return this.textarea.value
+        return this.textarea.value;
     }
 
     set value(value) {
-        this.textarea.value = value
+        this.textarea.value = value;
     }
 }

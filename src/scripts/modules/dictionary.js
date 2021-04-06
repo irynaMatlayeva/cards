@@ -43,7 +43,7 @@ const statusAll = "All";
 const statusOpen = "Open";
 const statusDone = "Done";
 const errMessage = "errMessage";
-cons;
+const errInput = "errInput";
 
 export const dictionary = {
   therapistValue,
@@ -90,4 +90,5 @@ export const dictionary = {
   statusOpen,
   statusDone,
   errMessage,
+  errInput,
 };

@@ -22,8 +22,9 @@ export class Select extends Component {
         if (disabled) this.select.setAttribute("disabled", disabled);
     }
 
-    label(text = "") {
-        const label = this.createElement({elem: "label", text: text});
+    label(text = "", labelClass = "") {
+        const label = this.createElement({elem: "label", classes: ["input__label"], text: text});
+        if (labelClass) label.classList.add(labelClass);
         label.setAttribute("for", this.select.id);
         this.select.parentElement.insertBefore(label, this.select);
     }
@@ -36,4 +37,3 @@ export class Select extends Component {
         this.select.value = value;
     }
 }
-
