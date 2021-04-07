@@ -3,7 +3,7 @@ import Component from "../config.js";
 export class Select extends Component {
     constructor() {
         super();
-        this.select = this.createElement({elem: "select"});
+        this.select = this.createElement({elem: "select", classes: ["form__select"]});
     }
 
     create() {

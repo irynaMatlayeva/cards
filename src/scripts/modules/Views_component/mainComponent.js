@@ -1,5 +1,4 @@
 import Component from '../config.js';
-import {headerContent} from './headerComponent.js';
 
 class ViewMainContent extends Component {
     constructor() {
@@ -11,8 +10,9 @@ class ViewMainContent extends Component {
         this.createRootElements(content);
     }
 
-    createRootElements(elem) {
-        const wrapper = this.createElement({elem: 'div', classes: ['wrapper'], content: [elem]});
+    createRootElements(...elem) {
+        const content = this.createElement({elem: 'div', classes: ['cards-visit__content'], content: [...elem]});
+        const wrapper = this.createElement({elem: 'div', classes: ['wrapper'], content: [content]});
         const section = this.createElement({elem: 'section', classes: ['cards-visit', 'cards__visit'], content: [wrapper]});
         const main = this.createElement({elem: 'main', content: [section]});
         document.body.append(main);
@@ -37,18 +37,16 @@ class ViewMainContent extends Component {
 
 
     contentVisit() {
-        const paragraph = this.createElement({elem: 'p', classes: ['cards-visit__default-text'], content: ['No items have been added']});
-        const content = this.createElement({elem: 'div', classes: ['cards-visit__content', 'cards-visit__content--card-list'], content: [paragraph]});
-
-        return content;
+        const paragraph = this.createElement({elem: 'p', classes: ['cards-visit__default-text'], text: ['No items have been added']});
+        return paragraph;
     }
 
     contentWelcome() {
         const contentImg = this.createElement({elem: 'img', classes: ['cards-visit__img']});
-        const contentSpan = this.createElement({elem: 'span', classes: ['cards-visit__welcome-text'], content: ['Welcome to our medical cards app']});
+        const contentSpan = this.createElement({elem: 'span', classes: ['cards-visit__text'], text: ['Welcome to our medical cards app']});
         const content = this.createElement({
             elem: 'div',
-            classes: ['cards-visit__content', 'cards-visit__content--welcome'],
+            classes: ['cards-visit__content-welcome'],
             content: [contentSpan, contentImg]
         });
         contentImg.src = '../dist/images/main.jpg';
@@ -60,4 +58,3 @@ class ViewMainContent extends Component {
 
 
 export const mainContent = new ViewMainContent();
-mainContent.render();
