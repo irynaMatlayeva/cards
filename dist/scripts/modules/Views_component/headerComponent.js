@@ -22,14 +22,7 @@ class ViewHeader extends Component {
     }
 
     render() {
-        // this.event();
         return this.header;
-    }
-
-    event() {
-        this.loginBtn.addEventListener("click", () => {
-            this.toggleActive();
-        });
     }
 
     toggleActive() {
@@ -42,5 +35,4 @@ class ViewHeader extends Component {
 }
 
 export const headerContent = new ViewHeader();
-// headerContent.render();
 

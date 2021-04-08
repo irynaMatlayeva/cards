@@ -19,26 +19,9 @@ export class Visit {
 
         this.modal.title("Fill out the Patient record", "");
         this.fullName.attr("text", "fullNameField", "", "John Smith", "required");
-        this.reason.attr(
-            "text",
-            "motiveField",
-            "",
-            "Describe the reason for the visit",
-            "required"
-        );
-        this.deteOfLastVisit.attr(
-            "date",
-            "deteOfLastVisit",
-            "",
-            "Date of last visit",
-            "required"
-        );
-        this.desc.attr(
-            "deskField",
-            "",
-            "Describe the purpose of the visit",
-            "required"
-        );
+        this.reason.attr("text", "motiveField", "", "Describe the reason for the visit", "required");
+        this.deteOfLastVisit.attr("date", "deteOfLastVisit", "", "Date of last visit", "required");
+        this.desc.attr("deskField", "", "Describe the purpose of the visit", "required");
         this.urgency.option(dictionary.priorityAll, dictionary.priorityAll);
         this.urgency.option(dictionary.priorityLow, dictionary.priorityLow);
         this.urgency.option(dictionary.priorityNormal, dictionary.priorityNormal);

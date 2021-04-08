@@ -36,15 +36,7 @@ export class VisitDentist extends Visit {
         this.modal.close();
     }
 
-    setValues(
-        fullName = null,
-        reason = null,
-        desc = null,
-        urgency = null,
-        status = null,
-        deteOfLastVisit = null,
-        submit = "Save changes"
-    ) {
+    setValues(fullName = null, reason = null, desc = null, urgency = null, status = null, deteOfLastVisit = null, submit = "Save changes") {
         this.fullName.value = fullName;
         this.reason.value = reason;
         this.desc.value = desc;

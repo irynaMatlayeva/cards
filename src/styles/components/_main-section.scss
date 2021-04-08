@@ -6,12 +6,12 @@
     flex-wrap: wrap;
     overflow-y: auto;
     overflow-x: hidden;
-    min-height: 20rem;
+    min-height: 30rem;
     margin: 20px 10px;
     padding: 20px;
     border: 1px solid $main-design-color;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   }
 
   &__content-welcome {

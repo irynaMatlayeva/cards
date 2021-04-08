@@ -4,24 +4,14 @@ import {dictionary} from "../dictionary.js";
 export class Input extends Component {
     constructor() {
         super();
-        this.input = this.createElement({
-            elem: "input",
-            classes: ["form__input"],
-        });
+        this.input = this.createElement({elem: "input", classes: ["form__input"]});
     }
 
     create() {
         return this.input;
     }
 
-    attr(
-        type = "text",
-        id = null,
-        value = null,
-        placeholder = null,
-        required = null,
-        name = null
-    ) {
+    attr(type = "text", id = null, value = null, placeholder = null, required = null, name = null) {
         this.input.setAttribute("type", type);
         if (id) this.input.setAttribute("id", id);
         if (value) this.input.setAttribute("value", value);
@@ -31,15 +21,9 @@ export class Input extends Component {
     }
 
     error() {
-        const errorMessage = this.createElement({
-            elem: "span",
-            classes: [dictionary.errMessage],
-            content: "Field filled incorrectly",
-        });
+        const errorMessage = this.createElement({elem: "span", classes: [dictionary.errMessage], content: "Field filled incorrectly"});
         if (!this.input.value.trim()) {
-            if (
-                this.input.nextElementSibling.classList.contains(dictionary.errMessage)
-            ) {
+            if (this.input.nextElementSibling.classList.contains(dictionary.errMessage)) {
                 this.input.classList.remove(dictionary.errInput);
                 this.input.nextElementSibling.remove();
             }
@@ -47,7 +31,7 @@ export class Input extends Component {
             this.input.after(errorMessage);
         }
         this.event("focus", () => {
-            if (this.input.value.trim()) {
+            if (!this.input.value.trim()) {
                 this.input.classList.remove(dictionary.errInput);
                 this.input.nextElementSibling.remove();
             }
@@ -58,7 +42,6 @@ export class Input extends Component {
         this.input.addEventListener(event, fn);
     }
 
-    //add label for
     label(text = "", labelClass = "") {
         const label = this.createElement({elem: "label", classes: ["input__label"], text: text});
         if (labelClass) label.classList.add(labelClass);

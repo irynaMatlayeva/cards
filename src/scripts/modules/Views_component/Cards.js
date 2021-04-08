@@ -1,4 +1,3 @@
-import {config} from "../config.js";
 import Component from "../config.js";
 import {deleteCardsData, readCardById, updateCardData} from "../requests.js";
 import {dictionary} from "../dictionary.js";
@@ -56,10 +55,11 @@ class Cards extends Component {
 
     removeCard(id) {
         const contentCard = document.querySelector(".cards-visit__content");
+        const defaultText = document.querySelector(".cards-visit__default-text");
 
         document.getElementById(id).remove();
         if (contentCard.children.length === 1) {
-            config.defaultText.classList.remove("hide");
+            defaultText.classList.remove("hide");
         }
         deleteCardsData(id);
     }

@@ -1,6 +1,5 @@
 "use strict";
 
-// import Component from "./modules/config.js";
 import {Modal} from "./modules/Modal_components/Modal.js";
 import {Form} from "./modules/Form_components/Form.js";
 import {Input} from "./modules/Form_components/Input.js";
