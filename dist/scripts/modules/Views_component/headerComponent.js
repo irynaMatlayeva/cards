@@ -11,7 +11,7 @@ class ViewHeader extends Component {
         this.logoSpanBolder = this.createElement({elem: "span", classes: ["logo__title--bolder"], content: ["Health"]});
         this.logoSpan = this.createElement({elem: "span", classes: ["logo__title"], content: [this.logoSpanBolder, "Care"]});
         this.logoImg = this.createElement({elem: "img", classes: ["logo__img"]});
-        this.logoImg.src = "../dist/images/logo.svg";
+        this.logoImg.src = "./dist/images/logo.svg";
         this.logoImg.alt = "Logo";
         this.logoWrapper = this.createElement({elem: "a", classes: ["logo"], content: [this.logoImg, this.logoSpan]});
         this.logoWrapper.href = "#void";

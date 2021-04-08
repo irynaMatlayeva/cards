@@ -49,7 +49,7 @@ class ViewMainContent extends Component {
             classes: ['cards-visit__content-welcome'],
             content: [contentSpan, contentImg]
         });
-        contentImg.src = '../dist/images/main.jpg';
+        contentImg.src = './dist/images/main.jpg';
         contentImg.alt = 'Welcome to our medical cards app';
 
         return content;
