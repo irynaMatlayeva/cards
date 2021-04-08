@@ -13,34 +13,10 @@ export class VisitCardiologist extends Visit {
         this.heartIllness = new Input();
         this.age = new Input();
 
-        this.pressure.attr(
-            "text",
-            dictionary.pressure,
-            "",
-            dictionary.pressurePlaceholder,
-            "required"
-        );
-        this.weightIndex.attr(
-            "number",
-            dictionary.weightIndex,
-            "",
-            dictionary.weightIndexPlaceholder,
-            "required"
-        );
-        this.heartIllness.attr(
-            "text",
-            dictionary.heartIllness,
-            "",
-            dictionary.heartIllnessPlaceholder,
-            "required"
-        );
-        this.age.attr(
-            "number",
-            dictionary.age,
-            "",
-            dictionary.agePlaceholder,
-            "required"
-        );
+        this.pressure.attr("text", dictionary.pressure, "", dictionary.pressurePlaceholder, "required");
+        this.weightIndex.attr("number", dictionary.weightIndex, "", dictionary.weightIndexPlaceholder, "required");
+        this.heartIllness.attr("text", dictionary.heartIllness, "", dictionary.heartIllnessPlaceholder, "required");
+        this.age.attr("number", dictionary.age, "", dictionary.agePlaceholder, "required");
         this.modal.create();
         this.modal.insert(this.form.create());
         this.form.insert(
@@ -76,18 +52,7 @@ export class VisitCardiologist extends Visit {
         this.modal.close();
     }
 
-    setValues(
-        fullName = null,
-        reason = null,
-        desc = null,
-        urgency = null,
-        pressure = null,
-        weightIndex = null,
-        heartIllness = null,
-        age = null,
-        status = null,
-        submit = "Save changes"
-    ) {
+    setValues(fullName = null, reason = null, desc = null, urgency = null, pressure = null, weightIndex = null, heartIllness = null, age = null, status = null, submit = "Save changes") {
         this.fullName.value = fullName;
         this.reason.value = reason;
         this.desc.value = desc;
@@ -104,6 +69,7 @@ export class VisitCardiologist extends Visit {
         return {
             [dictionary.doctorGetValue]: dictionary.cardiologistValue,
             [dictionary.fullNameGetValue]: this.fullName.value,
+            [dictionary.reasonGetValue]: this.reason.value,
             [dictionary.descGetValue]: this.desc.value,
             [dictionary.urgencyGetValue]: this.urgency.value,
             [dictionary.statusGetValue]: this.status.value,

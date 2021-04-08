@@ -1,23 +1,31 @@
-.cards{
-    &__filter{
-      
-      display: flex;
-      
-      max-width: 60%;
-      margin: 0 auto;
-      
-        }
+.cards {
+  &__filter {
+    display: flex;
+    max-width: 60%;
+    margin: 0 auto;
   }
-  #cardsSearch,
-  #cardsPriority,
-  #cardsOpenDone,
-  #search-btn{
-    margin: 8px;
+}
+
+#cardsSearch,
+#cardsPriority,
+#cardsOpenDone,
+#search-btn {
+  margin: 8px;
+}
+
+#search-btn {
+  @extend %cards-border;
+
+  &:hover,
+  &:focus {
+    @extend %cards-border-hover;
   }
-  #search-btn{
-    @extend %cards-border;
-    &:hover,
-    &:focus {
-      @extend %cards-border-hover;
-    }
+}
+
+@media (max-width: 768px) {
+  .cards__filter {
+    flex-direction: column;
+    width: 100%;
+    margin: 10px auto;
   }
+}

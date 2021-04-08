@@ -56,5 +56,4 @@ class ViewMainContent extends Component {
     }
 }
 
-
 export const mainContent = new ViewMainContent();
