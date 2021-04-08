@@ -4,7 +4,7 @@
   flex-direction: column;
 
   &__content {
-    max-width: 425px;
+    max-width: 22%;
     height: 100%;
     margin: 10px 20px;
     padding: 10px;
@@ -20,7 +20,7 @@
   }
 
   &__btn--show-more,
-  &__btn--edit {
+  &__btn--edit   {
     color: $blueLagoon;
     padding-bottom: 6px;
     text-shadow: 0 0 black;
@@ -44,4 +44,4 @@
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
   }
-}
+ }
