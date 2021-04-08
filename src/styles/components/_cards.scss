@@ -1,0 +1,47 @@
+.card {
+  @extend %cards-border;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    max-width: 425px;
+    height: 100%;
+    margin: 0 25px;
+    padding: 10px;
+  }
+
+  &__list {
+    padding: 10px 0;
+  }
+
+  &__btn--wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn--show-more,
+  &__btn--edit {
+    color: $blueLagoon;
+    padding-bottom: 6px;
+    text-shadow: 0 0 black;
+
+    &:hover {
+      padding-bottom: 4px;
+      border-bottom: 2px solid;
+      border-image: linear-gradient(to right, $blueLagoon 0%, $tradewind 100%) 1;
+      color: $blueLagoon;
+    }
+  }
+
+  &__btn--edit {
+    width: 25%;
+  }
+
+  &__btn--delete {
+    color: $blueLagoon;
+  }
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0 2px 8px;
+  }
+}

@@ -22,7 +22,7 @@ class ViewHeader extends Component {
     }
 
     render() {
-        this.event();
+        // this.event();
         return this.header;
     }
 
@@ -42,5 +42,5 @@ class ViewHeader extends Component {
 }
 
 export const headerContent = new ViewHeader();
-headerContent.render();
+// headerContent.render();
 

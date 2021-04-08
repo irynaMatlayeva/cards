@@ -3,7 +3,7 @@ import Component from "../config.js";
 export class TextArea extends Component {
     constructor() {
         super();
-        this.textarea = this.createElement({elem: "textarea"});
+        this.textarea = this.createElement({elem: "textarea", classes: ["form__textarea"]});
     }
 
     create() {

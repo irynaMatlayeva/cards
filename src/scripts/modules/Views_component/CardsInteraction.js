@@ -26,8 +26,8 @@ class CreateVisit {
         createSubmit.attr('submit', 'createVisitSubmit', 'Confirm selection', '');
 
         createModal.create();
-        createModal.paste(createForm.create());
-        createForm.paste(createSelect.create(), createSubmit.create());
+        createModal.insert(createForm.create());
+        createForm.insert(createSelect.create(), createSubmit.create());
         createModal.title('Choose a doctor', '');
 
         createSubmit.event('click', (e) => {

@@ -1,7 +1,7 @@
 import {config} from "./config.js";
 import {headerContent} from "./Views_component/headerComponent.js";
 import {cards} from "./Views_component/Cards.js";
-import {createFilter} from "./Modal_components/Filter.js";
+// import {createFilter} from "./Modal_components/Filter.js";
 import {dictionary} from "./dictionary.js";
 
 const tokenKey = "token";
@@ -58,7 +58,7 @@ export async function loginRequest(data, element) {
     const dataRes = await getPost(config.LOGIN_URL, JSON.stringify(data), 'Error! Invalid email or password.');
     localStorage.setItem(tokenKey, dataRes);
     element.close();
-    headerContent.changeContent();
+    headerContent.toggleActive();
     await readCardsData();
 }
 
@@ -77,7 +77,7 @@ export async function readCardsData() {
         data.map(item => {
             cards.createCards(item.content, item.id);
         })
-        createFilter();
+        // createFilter();
     }
 }
 

@@ -1,5 +1,5 @@
 .cards-visit {
-  &__content{
+  &__content {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -11,9 +11,15 @@
     padding: 20px;
     border: 1px solid $main-design-color;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  }
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
 
-  &__welcome-text {
+  &__content-welcome {
+    display: flex;
+    align-self: center;
+  }
+
+  &__text {
     width: 50%;
     align-self: center;
     text-align: center;
