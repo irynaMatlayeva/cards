@@ -5,6 +5,7 @@ import {createVisit} from "./CardsInteraction.js";
 import {VisitTherapist} from "../Visit_components/VisitTherapist.js";
 import {VisitCardiologist} from "../Visit_components/VisitCardiologist.js";
 import {VisitDentist} from "../Visit_components/VisitDentist.js";
+import {Modal} from "../Modal_components/Modal.js";
 
 class Cards extends Component {
     constructor() {
@@ -12,11 +13,11 @@ class Cards extends Component {
     }
 
     createCards(data, id) {
-        const cardDeleteBtn = this.createElement({elem: "a", classes: ["card__btn--delete"], content: "X"});
-        const showMoreLessButton = this.createElement({elem: "a", classes: ["card__btn--show-more"], text: "Show more"});
-        const editCardButton = this.createElement({elem: "a", classes: ["card__btn--edit", "hide"], text: "Edit"});
-        const cardList = this.createElement({elem: "ul", classes: ["card__list", "card__list--before"], text: [`Patient Card №${id}`]});
-        const btnWrap = this.createElement({elem: "div", classes: ["card__btn--wrap"], content: [showMoreLessButton, cardDeleteBtn]});
+        const cardDeleteBtn = this.createElement({elem: "a", classes: ["card-btn__delete"], content: "X"});
+        const showMoreLessButton = this.createElement({elem: "a", classes: ["card-btn__show-more"], text: "Show more"});
+        const editCardButton = this.createElement({elem: "a", classes: ["card-btn__edit", "hide"], text: "Edit"});
+        const cardList = this.createElement({elem: "ul", classes: ["card__list"], text: [`Patient Card №${id}`]});
+        const btnWrap = this.createElement({elem: "div", classes: ["card__btn", "card-btn", "card-btn__wrap"], content: [showMoreLessButton, cardDeleteBtn]});
         const card = this.createElement({elem: "div", id: id, classes: ["card", "card__content"], content: [btnWrap, cardList, editCardButton]});
 
         showMoreLessButton.setAttribute("href", "#void");
@@ -26,12 +27,14 @@ class Cards extends Component {
         for (const [key, value] of Object.entries(data)) {
             const cardItem = this.createElement({elem: "li", id: id, classes: ["card__item"], content: `${value}`});
             if (key !== dictionary.doctorGetValue) {
-                cardItem.classList.add("hide");
+                cardItem.classList.toggle("hide");
                 this.showMoreLessForItems(showMoreLessButton, cardItem);
             }
+
             cardItem.textContent = `${key}: ${data[key]}`;
             cardList.append(cardItem);
         }
+        this.showMoreLessForCard(showMoreLessButton, card, cardList, editCardButton);
 
         const contentCard = document.querySelector(".cards-visit__content");
         const defaultText = document.querySelector(".cards-visit__default-text");
@@ -39,12 +42,23 @@ class Cards extends Component {
         if (defaultText) defaultText.classList.add("hide");
         contentCard.append(card);
 
-
-        this.showMoreLessForCard(showMoreLessButton, card, cardList, editCardButton);
-
         cardDeleteBtn.addEventListener("click", (e) => {
             e.preventDefault();
-            this.removeCard(id);
+            const modalIsAgree = new Modal();
+            modalIsAgree.title("Do you want to remove this card?");
+            const btnAgree = this.createElement({elem: "a", classes: ["card-btn__agree"], text: "Yes"});
+            const btnCancel = this.createElement({elem: "a", classes: ["card-btn__cancel"], text: "No"});
+            const btnWrapForDeleteCard = this.createElement({elem: "div", classes: ["card-btn__wrapForDeleteCard"], content: [btnAgree, btnCancel]})
+
+            modalIsAgree.create();
+            modalIsAgree.insert(btnWrapForDeleteCard);
+            btnAgree.addEventListener("click", () => {
+                modalIsAgree.close();
+                this.removeCard(id);
+            })
+            btnCancel.addEventListener("click", () => {
+                modalIsAgree.close();
+            })
         })
 
         editCardButton.addEventListener("click", (e) => {
@@ -143,8 +157,6 @@ class Cards extends Component {
             } else {
                 e.target.textContent = "Show more";
             }
-            card.classList.toggle("card--before");
-            cardList.classList.toggle("card__list--before");
             editCardButton.classList.toggle("hide");
         })
     }
@@ -152,7 +164,7 @@ class Cards extends Component {
     showMoreLessForItems(e, cardItem) {
         e.addEventListener("click", (e) => {
             e.preventDefault();
-            cardItem.classList.toggle("show");
+            cardItem.classList.toggle("hide");
         })
     }
 }

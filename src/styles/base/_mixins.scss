@@ -7,5 +7,14 @@
 
 %cards-border-hover {
   border: 1px solid $main-design-color;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+}
+
+%btn-border-and-hover {
+  @extend %cards-border;
+
+  &:hover,
+  &:focus {
+    @extend %cards-border-hover;
+  }
 }
