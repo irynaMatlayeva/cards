@@ -2,12 +2,7 @@
 #loginSubmit,
 #createVisitSubmit,
 #isSubmit {
-  @extend %cards-border;
-
-  &:hover,
-  &:focus {
-    @extend %cards-border-hover;
-  }
+  @extend %btn-border-and-hover;
 }
 
 .btn {
@@ -19,4 +14,46 @@
 #createVisitSubmit,
 #isSubmit {
   margin-top: 30px;
+}
+
+.card-btn {
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__show-more,
+  &__edit {
+    color: $blueLagoon;
+    padding-bottom: 6px;
+    text-shadow: 0 0 black;
+
+    &:hover {
+      padding-bottom: 4px;
+      border-bottom: 2px solid;
+      border-image: linear-gradient(to right, $blueLagoon 0%, $tradewind 100%) 1;
+      color: $blueLagoon;
+    }
+  }
+
+  &__edit {
+    width: 25%;
+  }
+
+  &__delete {
+    color: $blueLagoon;
+  }
+
+  &__wrapForDeleteCard {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  &__agree,
+  &__cancel {
+    width: 25%;
+    text-align: center;
+    @extend %btn-border-and-hover;
+  }
 }

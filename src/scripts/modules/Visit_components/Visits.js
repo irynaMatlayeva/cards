@@ -17,7 +17,7 @@ export class Visit {
         this.status = new Select();
         this.submit = new Input();
 
-        this.modal.title("Fill out the Patient record", "");
+        this.modal.title("Fill out the Patient record");
         this.fullName.attr("text", "fullNameField", "", "John Smith", "required");
         this.reason.attr("text", "motiveField", "", "Describe the reason for the visit", "required");
         this.deteOfLastVisit.attr("date", "deteOfLastVisit", "", "Date of last visit", "required");
