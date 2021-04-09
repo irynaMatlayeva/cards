@@ -45,10 +45,10 @@ class Cards extends Component {
         cardDeleteBtn.addEventListener("click", (e) => {
             e.preventDefault();
             const modalIsAgree = new Modal();
-            modalIsAgree.title("Do you want to remove this card?");
+            modalIsAgree.title("Delete selected card?");
             const btnAgree = this.createElement({elem: "a", classes: ["card-btn__agree"], text: "Yes"});
             const btnCancel = this.createElement({elem: "a", classes: ["card-btn__cancel"], text: "No"});
-            const btnWrapForDeleteCard = this.createElement({elem: "div", classes: ["card-btn__wrapForDeleteCard"], content: [btnAgree, btnCancel]})
+            const btnWrapForDeleteCard = this.createElement({elem: "div", classes: ["card-btn__wrapForDeleteCard"], content: [btnAgree, btnCancel]});
 
             modalIsAgree.create();
             modalIsAgree.insert(btnWrapForDeleteCard);
