@@ -40,7 +40,9 @@ class Cards extends Component {
         const defaultText = document.querySelector(".cards-visit__default-text");
 
         if (defaultText) defaultText.classList.add("hide");
+        card.draggable = true;
         contentCard.append(card);
+        this.dragAndDrop(contentCard);
 
         cardDeleteBtn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -65,6 +67,7 @@ class Cards extends Component {
             e.preventDefault();
             this.editCard(id);
         })
+
     }
 
     removeCard(id) {
@@ -167,6 +170,51 @@ class Cards extends Component {
             cardItem.classList.toggle("hide");
         })
     }
+
+    dragAndDrop(contentCard) {
+        contentCard.addEventListener("dragstart", (e) => {
+            e.target.classList.add("selected");
+        })
+
+        contentCard.addEventListener(`dragend`, (e) => {
+            e.target.classList.remove("selected");
+        });
+
+        contentCard.addEventListener("dragover", (e) => {
+            e.preventDefault();
+
+            const activeElement = contentCard.querySelector(".selected");
+            const currentElement = e.target;
+
+            if (!isMoveAble(activeElement, currentElement)) {
+                return;
+            }
+
+            const nextElement = getNextElement(e.clientY, currentElement);
+
+            if (
+                nextElement &&
+                activeElement === nextElement.previousElementSibling ||
+                activeElement === nextElement
+            ) {
+                return;
+            }
+
+            contentCard.insertBefore(activeElement, nextElement);
+        });
+
+    };
+}
+
+const getNextElement = (cursorPosition, currentElement) => {
+    const currentElementCoord = currentElement.getBoundingClientRect();
+    const currentElementCenter = currentElementCoord.y + currentElementCoord.height;
+
+    return (cursorPosition < currentElementCenter) ? currentElement : currentElement.nextElementSibling;
+};
+
+const isMoveAble = (activeElement, currentElement) => {
+    return activeElement !== currentElement && currentElement.classList.contains("card");
 }
 
 export const cards = new Cards();
