@@ -3,8 +3,8 @@
 import {Modal} from "./modules/Modal_components/Modal.js";
 import {Form} from "./modules/Form_components/Form.js";
 import {Input} from "./modules/Form_components/Input.js";
-import {headerContent} from "./modules/Views_component/headerComponent.js";
-import {mainContent} from "./modules/Views_component/mainComponent.js";
+import {headerContent} from "./modules/Views_component/HeaderComponent.js";
+import {mainContent} from "./modules/Views_component/MainComponent.js";
 import {createVisit} from "./modules/Views_component/CardsInteraction.js";
 import {readCardsData, loginRequest} from "./modules/requests.js";
 import {config} from "./modules/config.js";

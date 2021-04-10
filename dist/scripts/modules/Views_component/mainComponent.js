@@ -37,8 +37,7 @@ class ViewMainContent extends Component {
 
 
     contentVisit() {
-        const paragraph = this.createElement({elem: 'p', classes: ['cards-visit__default-text'], text: ['No items have been added']});
-        return paragraph;
+        return this.createElement({elem: 'p', classes: ['cards-visit__default-text'], text: ['No items have been added']});
     }
 
     contentWelcome() {

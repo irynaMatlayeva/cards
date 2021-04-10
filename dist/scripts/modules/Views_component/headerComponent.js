@@ -1,5 +1,5 @@
 import Component from "../config.js";
-import {mainContent} from "./mainComponent.js";
+import {mainContent} from "./MainComponent.js";
 
 class ViewHeader extends Component {
     constructor() {
