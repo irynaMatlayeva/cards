@@ -1,12 +1,12 @@
 import {config} from "./config.js";
-import {headerContent} from "./Views_component/headerComponent.js";
+import {headerContent} from "./Views_component/HeaderComponent.js";
 import {cards} from "./Views_component/Cards.js";
 import {filter} from "./Modal_components/Filter.js";
 import {dictionary} from "./dictionary.js";
 
 const tokenKey = "token";
 
-//universal function for requests
+//common function for requests
 const makeRequest = (url, method = "GET", config, errorMessage = "Error") => {
     return fetch(url, {
         method,
@@ -20,8 +20,8 @@ const makeRequest = (url, method = "GET", config, errorMessage = "Error") => {
     });
 };
 
-//universal functions for fetch methods
-const getPost = (url, requestBody, errorMessage) =>
+//common functions for fetch methods
+const postData = (url, requestBody, errorMessage) =>
     makeRequest(
         url,
         "POST",
@@ -62,7 +62,7 @@ const deleteCards = (url) =>
 
 //requests
 export async function loginRequest(data, element) {
-    const dataRes = await getPost(
+    const dataRes = await postData(
         config.LOGIN_URL,
         JSON.stringify(data),
         "Error! Invalid email or password."
@@ -74,7 +74,7 @@ export async function loginRequest(data, element) {
 }
 
 export async function createCardData(data) {
-    const dataRes = await getPost(config.CARDS_URL, JSON.stringify(data));
+    const dataRes = await postData(config.CARDS_URL, JSON.stringify(data));
     const dataJson = JSON.parse(dataRes);
     const {content, id} = dataJson;
     cards.createCards(content, id);
