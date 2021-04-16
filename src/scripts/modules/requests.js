@@ -1,7 +1,7 @@
 import {config} from "./config.js";
-import {headerContent} from "./Views_component/HeaderComponent.js";
-import {cards} from "./Views_component/Cards.js";
-import {filter} from "./Modal_components/Filter.js";
+import {headerContent} from "./components/Views/HeaderComponent.js";
+import {cards} from "./components/Views/Cards.js";
+import {filter} from "./components/Modal/Filter.js";
 import {dictionary} from "./dictionary.js";
 
 const tokenKey = "token";
