@@ -67,7 +67,7 @@ function validateUserRegistrationData(emailInput, passwordInput) {
     } else if (!password && password !== config.LOGIN_PASS) {
         passwordInput.error();
     } else {
-        return {email: email, password: password};
+        return {email, password};
     }
 
 }
