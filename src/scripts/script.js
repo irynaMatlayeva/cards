@@ -1,11 +1,11 @@
 "use strict";
 
-import {Modal} from "./modules/Modal_components/Modal.js";
-import {Form} from "./modules/Form_components/Form.js";
-import {Input} from "./modules/Form_components/Input.js";
-import {headerContent} from "./modules/Views_component/HeaderComponent.js";
-import {mainContent} from "./modules/Views_component/MainComponent.js";
-import {createVisit} from "./modules/Views_component/CardsInteraction.js";
+import {Modal} from "./modules/components/Modal/Modal.js";
+import {Form} from "./modules/components/Form/Form.js";
+import {Input} from "./modules/components/Form/Input.js";
+import {headerContent} from "./modules/components/Views/HeaderComponent.js";
+import {mainContent} from "./modules/components/Views/MainComponent.js";
+import {createVisit} from "./modules/components/Views/CardsInteraction.js";
 import {readCardsData, loginRequest} from "./modules/requests.js";
 import {config} from "./modules/config.js";
 
